@@ -15,10 +15,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Document(collation = "movies")
+@Document
 public class Movie {
     @Id
-    private ObjectId id;
+    private ObjectId _id;
     private String imdbId;
     private String title;
     private String releaseDate;
@@ -29,3 +29,4 @@ public class Movie {
     @DocumentReference
     private List<Review> reviewIds;
 }
+
