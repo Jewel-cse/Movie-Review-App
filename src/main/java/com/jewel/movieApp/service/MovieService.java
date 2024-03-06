@@ -2,6 +2,7 @@ package com.jewel.movieApp.service;
 
 import com.jewel.movieApp.model.Movie;
 import com.jewel.movieApp.repository.MovieRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +14,9 @@ public class MovieService {
     private MovieRepository movieRepository;
     public List<Movie> getAllMovie(){
         return movieRepository.findAll();
+    }
+
+    public Movie getMovieById(ObjectId id) {
+        return movieRepository.findById(id).get();
     }
 }
